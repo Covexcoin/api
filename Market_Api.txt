@@ -1,0 +1,39 @@
+# Public Rest API for CoVEX (2019-07-31)
+# General API Information
+* The base endpoint is: **https://covex.io**
+* All endpoints return either a JSON object or array.
+* Data is returned in **ascending** order. Oldest first, newest last.
+* All time and timestamp related fields are in milliseconds.
+* For `GET` endpoints, parameters must be sent as a `query string`.
+* For `POST`, `PUT`, and `DELETE` endpoints, the parameters may be sent as a
+  `query string` or in the `request body` with content type
+  `application/x-www-form-urlencoded`. You may mix parameters between both the
+  `query string` and `request body` if you wish to do so.
+* Parameters may be sent in any order.
+* If a parameter sent in both the `query string` and `request body`, the
+  `query string` parameter will be used.
+
+### Market information
+```
+GET /api/v1/markets/{btc}
+```
+**Parameters:**
+btc
+
+**Response:**
+{
+    "status": 1,
+    "msg": "Success",
+    "Info": [
+        {
+            "pair": "LTC/BTC",
+            "coin": "Bitcoin",
+            "lastprice": "0.00942300/$95.03",
+            "24hchange": "1.93%",
+            "24hhigh": "0.00980400",
+            "24hlow": "0.00924200",
+            "marketcap": "$28111270.80",
+            "24hvolume": "2787.31670569"
+        }
+    ]
+}

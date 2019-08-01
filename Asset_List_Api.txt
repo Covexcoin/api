@@ -1,0 +1,75 @@
+# Public Rest API for CoVEX (2019-07-31)
+# General API Information
+* The base endpoint is: **https://covex.io**
+* All endpoints return either a JSON object or array.
+* Data is returned in **ascending** order. Oldest first, newest last.
+* All time and timestamp related fields are in milliseconds.
+* For `GET` endpoints, parameters must be sent as a `query string`.
+* For `POST`, `PUT`, and `DELETE` endpoints, the parameters may be sent as a
+  `query string` or in the `request body` with content type
+  `application/x-www-form-urlencoded`. You may mix parameters between both the
+  `query string` and `request body` if you wish to do so.
+* Parameters may be sent in any order.
+* If a parameter sent in both the `query string` and `request body`, the
+  `query string` parameter will be used.
+
+
+### Asset List
+GET /api/v1/assets
+**Parameters:**
+None
+
+**Response:**
+Responce :
+{
+    "status": 1,
+    "msg": "Success",
+    "Info": {
+        "BTC": {
+            "lastUpdateTimestamp": "2019-07-25T13:27:00Z",
+            "name": "Bitcoin",
+            "UnifiedCryptoassetID": "1",
+            "canWithdraw": true,
+            "canDeposit": true,
+            "minWithdrawal": "0.0025",
+            "maxWithdrawal": "no limit",
+            "makerFee": "0.0006",
+            "takerFee": "0.0006"
+        },
+        "LTC": {
+            "lastUpdateTimestamp": "2019-07-25T13:27:00Z",
+            "name": "Litecoin",
+            "UnifiedCryptoassetID": "2",
+            "canWithdraw": true,
+            "canDeposit": true,
+            "minWithdrawal": "0.003",
+            "maxWithdrawal": "no limit",
+            "makerFee": "0.002",
+            "takerFee": "0.002"
+        },
+        "ETH": {
+            "lastUpdateTimestamp": "2019-07-25T13:27:00Z",
+            "name": "Etherum",
+            "UnifiedCryptoassetID": "3",
+            "canWithdraw": true,
+            "canDeposit": true,
+            "minWithdrawal": "0.03",
+            "maxWithdrawal": "no limit",
+            "makerFee": "0.02",
+            "takerFee": "0.02"
+        },
+        "USDT": {
+            "lastUpdateTimestamp": "2019-07-25T13:27:00Z",
+            "name": "Tether",
+            "UnifiedCryptoassetID": "4",
+            "canWithdraw": true,
+            "canDeposit": true,
+            "minWithdrawal": "7.6",
+            "maxWithdrawal": "no limit",
+            "makerFee": "4.3",
+            "takerFee": "4.3"
+        }
+    }
+}  
+```
+

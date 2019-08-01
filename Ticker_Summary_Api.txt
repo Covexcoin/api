@@ -1,0 +1,48 @@
+# Public Rest API for CoVEX (2019-07-31)
+# General API Information
+* The base endpoint is: **https://covex.io**
+* All endpoints return either a JSON object or array.
+* Data is returned in **ascending** order. Oldest first, newest last.
+* All time and timestamp related fields are in milliseconds.
+* For `GET` endpoints, parameters must be sent as a `query string`.
+* For `POST`, `PUT`, and `DELETE` endpoints, the parameters may be sent as a
+  `query string` or in the `request body` with content type
+  `application/x-www-form-urlencoded`. You may mix parameters between both the
+  `query string` and `request body` if you wish to do so.
+* Parameters may be sent in any order.
+* If a parameter sent in both the `query string` and `request body`, the
+  `query string` parameter will be used.
+
+### Ticker Summary
+```
+GET /api/v1/ticker
+```
+**Parameters:**
+None
+
+**Response:**
+{
+    "status": 1,
+    "msg": "Success",
+    "Info": [
+        {
+            "lastUpdateTimestamp": "2019-07-25T14:47:00Z",
+            "tradingPairs ": "LTCBTC",
+            "LastPrice": "0.00943500",
+            "lowestAsk": "0.00924900",
+            "highestBid": "0.00980400",
+            "baseVolume24h": "28092033.57842464",
+            "quoteVolume24h": "2811.55"
+        },
+        {
+            "lastUpdateTimestamp": "2019-07-25T14:46:00Z",
+            "tradingPairs ": "ETHBTC",
+            "LastPrice": "0.02207600",
+            "lowestAsk": "0.02138200",
+            "highestBid": "0.02245600",
+            "baseVolume24h": "22451036.32730348",
+            "quoteVolume24h": "2246.98"
+        }
+    ]
+} 
+```
